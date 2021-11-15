@@ -1,21 +1,14 @@
-Java Spring Boot Rest Api Demo
+Java Spring Boot Handle Options Requests Demo
 ==============================
 
-如何使用SpringBoot来定义RestApi
+当声明了`@CrossOrigin`时， Spring boot会自动处理OPTIONS请求
 
 ```
-brew install httpie
-./mvnw package
-java -jar target/demo-0.0.1-SNAPSHOT.jar
+npm i
+npm run server
+npm run client
 ```
 
-```
-http POST http://localhost:8080/api/messages text=aaa
-http POST http://localhost:8080/api/messages text=bbb
+然后点击页面上的"Delete Remote Message"按钮，可以在浏览器的Network里看到发送了OPTIONS请求，且成功处理
 
-http POST http://localhost:8080/api/messages text=aa##bb
-
-http GET http://localhost:8080/api/messages
-
-http GET http://localhost:8080/api/messages/0
-```
+![demo](./images/demo.png)
